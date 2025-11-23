@@ -28,8 +28,9 @@ def look_say(n):
             counter = 1
 
     string += str(counter) + n[len(n)-1]        
-         
-    print(string)
-        
-num = 9000 #Testing
+
+    print(int(string)) #Debug
+    return int(string)
+
+num = 2014 #Testing
 look_say(num)
