@@ -16,21 +16,20 @@
 
 def look_say(n):
     n = str(n)
-    c = ""
-    sl_in = 0
+    counter = 1
+    string = ""
 
-    for position, digit in enumerate(n):
-        if digit != n[sl_in]:
-            sl = slice(sl_in, position)
-            r = str(len(n[sl])), n[position-1]
-            c += "".join(r)
-            sl_in = position
-        if position == len(n)-1:
-            sl = slice(sl_in, len(n))
-            r = str(len(n[sl])), n[position]
-            c += "".join(r)
-    print(int(c)) #Debug
-    return c   
+    for pos in range(1, len(n)):
+                
+        if n[pos] == n[pos-1]:
+            counter += 1
+        else:
+            string += str(counter) + n[pos-1]
+            counter = 1
+
+    string += str(counter) + n[len(n)-1]        
+         
+    print(string)
         
-num = 0 #Testing
+num = 9000 #Testing
 look_say(num)
